@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report a Problem | EstateGuard</title>
+  <link rel="stylesheet" href="report.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">EstateGuard</a>
+      <nav aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="#">Hostels</a>
+        <a href="#">Rentals &amp; Land</a>
+        <a href="#">Verification &amp; Safety</a>
+        <a href="report.html" aria-current="page">Report a Problem</a>
+        <a href="#">Contact &amp; Listings</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h1>Report a Problem</h1>
+      <p>Saw a fake listing, a suspicious agent, or a land deal that feels wrong?
+         Tell us. Every report helps us protect other renters and buyers.</p>
+    </section>
+
+    <div class="layout">
+
+      <!-- REPORT FORM -->
+      <section class="card" aria-labelledby="form-title">
+        <h2 id="form-title">Report form</h2>
+        <p class="hint">Fields marked <span style="color:var(--err)">*</span> are required.</p>
+
+        <form id="reportForm" novalidate>
+
+          <fieldset>
+            <legend>The problem</legend>
+
+            <div class="field">
+              <label for="type">Type of problem <span class="req">*</span></label>
+              <select id="type" name="type" required>
+                <option value="">Select one...</option>
+                <option>Fake or misleading hostel listing</option>
+                <option>Fake or misleading rental house</option>
+                <option>Land fraud or double selling</option>
+                <option>Forged or suspicious land title</option>
+                <option>Agent or landlord asking for money upfront</option>
+                <option>Listing not matching what I found</option>
+                <option>Other</option>
+              </select>
+              <p class="error">Please choose the type of problem.</p>
+            </div>
+
+            <div class="field">
+              <label for="listing">Listing name or link <span class="req">*</span></label>
+              <input type="text" id="listing" name="listing" required
+                     placeholder="e.g. Sunrise Hostel, or paste the link">
+              <p class="error">Tell us which listing or property this is about.</p>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="location">Location <span class="req">*</span></label>
+                <input type="text" id="location" name="location" required
+                       placeholder="e.g. Nansana, Wakiso">
+                <p class="error">Please enter the location.</p>
+              </div>
+              <div class="field">
+                <label for="date">Date it happened <span class="opt">(optional)</span></label>
+                <input type="date" id="date" name="date">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="amount">Money lost, if any (UGX) <span class="opt">(optional)</span></label>
+              <input type="number" id="amount" name="amount" min="0" step="1000" placeholder="0">
+            </div>
+
+            <div class="field">
+              <label for="details">What happened? <span class="req">*</span></label>
+              <textarea id="details" name="details" required minlength="30" maxlength="1500"
+                        placeholder="Describe what happened, step by step."></textarea>
+              <div class="count"><span id="chars">0</span>/1500</div>
+              <p class="error">Please describe what happened (at least 30 characters).</p>
+            </div>
+
+            <div class="field">
+              <label for="evidence">Evidence <span class="opt">(photos, screenshots, receipts, PDF)</span></label>
+              <input type="file" id="evidence" name="evidence" multiple accept="image/*,.pdf">
+              <p class="error" id="fileError">Each file must be 5 MB or smaller.</p>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Your contact details</legend>
+
+            <div class="field">
+              <label for="name">Your name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+              <p class="error">Please enter your name.</p>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="phone">Phone <span class="req">*</span></label>
+                <input type="tel" id="phone" name="phone" required autocomplete="tel"
+                       pattern="^(\+256|0)7[0-9]{8}$" placeholder="0772123456">
+                <p class="error">Enter a valid Ugandan number, e.g. 0772123456 or +256772123456.</p>
+              </div>
+              <div class="field">
+                <label for="email">Email <span class="opt">(optional)</span></label>
+                <input type="email" id="email" name="email" autocomplete="email">
+                <p class="error">Please enter a valid email address.</p>
+              </div>
+            </div>
+
+            <div class="field consent">
+              <input type="checkbox" id="consent" name="consent" required>
+              <label for="consent">I confirm this report is true to the best of my knowledge,
+                and I agree that EstateGuard may contact me about it. <span class="req">*</span></label>
+            </div>
+            <div class="field"><p class="error" id="consentError">Please tick the box to continue.</p></div>
+          </fieldset>
+
+          <button type="submit">Submit report</button>
+          <div class="success" id="success" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <!-- WHAT TO INCLUDE -->
+      <aside class="card" aria-labelledby="include-title">
+        <h2 id="include-title">What to include</h2>
+        <p class="hint">Tick each item as you gather it. The more detail, the faster we can act.</p>
+
+        <ul class="checklist" id="checklist">
+          <li><label><input type="checkbox"><span>Name of the hostel, house, agent or landlord</span></label></li>
+          <li><label><input type="checkbox"><span>Link or screenshot of the listing or advert</span></label></li>
+          <li><label><input type="checkbox"><span>Exact location (town, area, landmark)</span></label></li>
+          <li><label><input type="checkbox"><span>Date and time of the incident</span></label></li>
+          <li><label><input type="checkbox"><span>Phone numbers or accounts used by the other person</span></label></li>
+          <li><label><input type="checkbox"><span>Amount paid, how you paid, and the receipt or Mobile Money message</span></label></li>
+          <li><label><input type="checkbox"><span>Photos of the place, documents or land title</span></label></li>
+          <li><label><input type="checkbox"><span>Chat or message history (WhatsApp, SMS)</span></label></li>
+          <li><label><input type="checkbox"><span>A clear, step-by-step description of what happened</span></label></li>
+        </ul>
+        <p class="progress" id="progress">0 of 9 gathered</p>
+
+        <div class="safety">
+          <strong>Stay safe:</strong> do not confront the person or send more money.
+          If you are in danger or the matter is criminal, contact your nearest police station.
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer>&copy; 2026 EstateGuard: Verified Hostel and Property Finder</footer>
+</body>
+</html>
