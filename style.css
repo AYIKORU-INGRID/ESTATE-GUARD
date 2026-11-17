@@ -455,5 +455,45 @@
         .hostel-page {
          margin: 0;
          padding: 0;
-         
+         background: #f7f8fa;
+         color: #303746;
+         font-family:"Poppins", sans-serif;
+        }
+       .hostel-page header h1{
+        text-align:center;
+        color:brown;
+        font-size:40px;
+       }
+       .hostel-page .site-header nav {
+        background-color: white;
+        padding: 20px;
+        display:flex;
+        justify-content:center;
+        gap: 8px 24px; 
+        font-weight: bold;
+       }
+       .hostel-page .site-header{
+        background-color:white;
+        border-bottom: 1px solid #e5e7eb;
+         }
+        .hostel-page .site-header a {
+        color: brown;
+        font-weight: 600;
+        text-decoration: none;
+        }
+        .hostel-page .site-header a:hover,
+        .hostel-page .site-header a[aria-current="page"] {
+            color: brown;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            
+        }
+        .hostel-page .wrap {
+            width: min(1100px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 36px 0 48px;
+        }
+        .hostel-page .intro {
+            margin-bottom: 28px;
+            text-align: center;
         }
