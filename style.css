@@ -6,7 +6,7 @@
         }
 
         body {
-            font-family: Poppins, sans-serif;
+            font-family: Euclid Circular B, sans-serif;
             background-color: white;
             color: black;
         }
@@ -134,4 +134,4 @@
                 grid-template-columns: 1fr;
                 padding: 25px;
             }
-        }
+        } /* End of Contact section */
