@@ -449,4 +449,11 @@
             .report-page fieldset {
                 padding: 14px;
             }
+        } /*End of Report page */
+
+        /*Hostel page */
+        .hostel-page {
+         margin: 0;
+         padding: 0;
+         
         }
