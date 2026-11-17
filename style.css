@@ -41,25 +41,25 @@
             gap: 40px;
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.08);
         }
 
         /* Contact information */
         .contact-info h2 {
             margin-bottom: 20px;
-            color: red;
+            color:brown;
         }
         .viewing-container h1,
         .list-property-container h1 {
             text-align: center;
             margin-bottom: 10px;
-            color: darkblue;
+            color: brown;
         }
 
         .contact-info p {
             margin-bottom: 20px;
             line-height: 1.6;
-            color: yellow;
+            color: black;
         }
 
         .info-item {
@@ -87,7 +87,7 @@
         textarea {
             width: 100%;
             padding: 12px;
-            margin-bottom: 18px;
+            margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 10px;
             font-size: 15px;
@@ -109,17 +109,19 @@
             cursor: pointer;
             display: inline-block;
             margin: 10px;
+            box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.08);
         }
 
         button:hover {
-            background-color: #1d4e;
-        }
+            background-color:gray;
+            color:black;}
+
 
         /* Footer */
         footer {
             text-align: center;
-            background-color: #1e293b;
-            color: white;
+            background-color: burlywood;
+            color: black;
             padding: 20px;
             margin-top: 40px;
         }
