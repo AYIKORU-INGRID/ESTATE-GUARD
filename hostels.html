@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hostels</title>
+    <title>Hostels | Estate Guard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="hostel-page">
@@ -11,7 +11,7 @@
 
         <nav>
                 <a href="index.html">Home</a>
-                <a href="hostels.html">Hostels</a>
+                <a href="hostels.html" aria-current="page">Hostels</a>
                 <a href="rentals.html">Rentals & Land</a>
                 <a href="verification.html"> Verification & Safety</a>
                 <a href="report.html"> Report a Problem</a>
@@ -24,43 +24,28 @@
         <p>Browse inspected and verified student accommodations near campus. All listings have been checked for safety, fair pricing and valid management.</p>
         </section>
         <br>
-        <section>
+        <section class="listings">
             <h2>Available Hostel Listings</h2>
-            <br>
-            <h3>Olympia Heights Hostel</h3>
-            <p><strong>Location:</strong> Kikoni, 5 minutes walk to the Main Gate</p>
-            <p><strong>Room Types:</strong> Single Self-Contained, Double Sharing</p>
-            <p><strong>Status:</strong> Spaces avaliable for Upcoming Semesters</p>
-            <figure>
-                <img src="hostel-images/d1.jfif" alt="Image failed to load" width="500" height="300">
-                <figcaption><em>Single self-contained hostel room</em></figcaption>
-            </figure>
-            <br><figure>
-                <img src="hostel-images/pic2.webp" alt="Image failed to load" width="500" height="300">
-                <figcaption><em>Double Sharing Hostel Rooms</em></figcaption>
-                 </figure>
-                 <br>
-                <a href="contact.html">Request A Viewing</a>
-                <br>
-                <h3>Dreamworld Student Suites</h3>
-                <br>
-                <p><strong>Location:</strong>Wandegeya, 10 Minutes walk to campus</p>
-                <p><strong>Room Types:</strong> Single Rooms, Triple Sharing</p>
-                <p><strong>Status:</strong> Few Rooms Left</p>
-                <br>
-                <figure>
-                    <img src="hostel-images/d2.jpg" alt="Image failed to load" width="500" height="300">
-                    <figcaption>Single Rooms</figcaption>
-                </figure>
-                <br>
-                <figure>
-                    <img src="hostel-images/pic1.webp" alt="Image failed to load" width="500" height="300">
-                    <figcaption>Triple Sharing</figcaption>
-                </figure>
-                <br>
-                <a href="contact.html">Request A Viewing</a>
-        </section><h2></h2>
-        <br>
+            <div class="grid">
+            <article class="card">
+                <h3>Olympia Heights Hostel<span class="badge">New</span></h3>
+                <dl>
+                  <dt><strong>Location</strong>: Kikoni</dt>
+                  <dt><strong>Room Types</strong>: Single Self-Contained, Double Sharing</dt>
+                  <dt><strong>Status</strong>: Spaces available for Upcoming Semesters</dt>
+                </dl>
+                <p><a href="contacts.html">Request A Viewing</a></p>
+            </article>
+    <section class="card">
+    <article>
+        <h3>Dreamworld Student Suites<span class="badge">New</span></h3>
+        <dl>
+            <dt><strong>Location</strong>: Wandegeya</dt>
+            <dt><strong>Room Types</strong>: Single Self-Contained, Double Sharing</dt>
+            <dt><strong>Status</strong>: Few Rooms Left</dt>
+        </dl>
+    </article>
+    <a href="contacts.html">Request A Viewing</a>
         <section>
             <h2>Price and Distance Comparison</h2>
             <br>
@@ -88,7 +73,6 @@
                 </tr>
             </table>
         </section>
-        <br>
         <section>
             <h2>Standard Facilities & Hostel Rules</h2>
             <br>
