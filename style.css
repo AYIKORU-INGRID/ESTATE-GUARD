@@ -1,1327 +1,958 @@
-    *{
-            box-sizing: border-box;
-            margin: 10px;
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-top: 4px;
-            padding-bottom: 4px;
-            
-        }
-
-        body {
-            font-family: "Poppins", sans-serif;
-            background-color: white;
-            color: black;
-            line-height: 1.6;
-        }
-        .contact-page .site-header nav{
-            background-color:white;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        .contact-page .site-header{
-            padding:10px;
-            font-weight: bold; 
-            display: flex; 
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px 24px;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 10px 20px;
+/* =========================================================
+   ESTATE GUARD - SHARED STYLES
+   ========================================================= */
+:root {
+    --brown: #8b4513;
+    --brown-dark: #59321f;
+    --brown-soft: #f4eadf;
+    --cream: #f8f5f0;
+    --white: #ffffff;
+    --ink: #302923;
+    --muted: #67584f;
+    --border: #eadfd3;
+    --shadow: 0 12px 30px rgba(79, 55, 40, 0.08);
 }
-        .contact-page .site-header a {
-            color: brown;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        .contact-page .site-header a:hover,
-        .contact-page .site-header a[aria-current="page"] {
-            color: brown;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-        
 
-        /* Contact section */
-        .contact-container {
-            max-width: 1100px;
-            margin: 60px auto;
-            padding: 10px;
-        }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-        .contact-container h1 {
-            text-align: center;
-            margin-bottom: 10px;
-            color: black;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        .intro {
-            text-align: center;
-            margin-bottom: 40px;
-            color: black;
-            font-weight: bold;
-        }
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "Poppins", Arial, sans-serif;
+    line-height: 1.6;
+}
 
-        .contact-box {
-            background:burlywood;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.08);
-        }
+img {
+    max-width: 100%;
+    display: block;
+}
 
-        /* Contact information */
-        .contact-info h2 {
-            margin-bottom: 20px;
-            color:brown;
-        }
-        .viewing-container h1,
-        .list-property-container h1 {
-            text-align: center;
-            margin-bottom: 10px;
-            color: brown;
-        }
+a {
+    color: var(--brown);
+}
 
-        .contact-info p {
-            margin-bottom: 20px;
-            line-height: 1.6;
-            color: black;
-        }
+/* Shared page header */
+.site-header {
+    min-height: 78px;
+    padding: 0 5%;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
 
-        .info-item {
-            margin: 20px 0;
-        }
+.site-header nav {
+    min-height: 78px;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+}
 
-        .info-item strong {
-            display: block;
-            margin-bottom: 5px;
-            color: #1e293b;
-        }
-        a{
-            color: brown;
-            text-decoration: underline;
-        }
+.site-header a {
+    padding: 9px 10px;
+    color: #5f5048;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
 
-        /* Form */
-        form {
-            display: flex;
-            flex-direction: column;
-        }
+.site-header a:hover,
+.site-header a[aria-current="page"] {
+    background: var(--brown-soft);
+    color: var(--brown);
+}
 
-        label {
-            margin-bottom: 6px;
-            font-weight: bold;
-        }
+footer {
+    text-align: center;
+}
 
-        input,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            font-size: 15px;
-        }
+/* INDEX PAGE */
+.home-page {
+    background: var(--cream);
+}
 
-        textarea {
-            height: 130px;
-            resize: vertical;
-        }
+.home-page .site-header {
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
 
-        button {
-            width: 150px;
-            background-color: brown;
-            color: white;
-            border: none;
-            padding: 10px 10px;
-            border-radius: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            display: inline-block;
-            margin: 10px;
-            box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.08);
-        }
+.home-page .site-header nav {
+    min-height: 78px;
+    padding: 0;
+    background: transparent;
+}
 
-        button:hover {
-            background-color:#6f2c20;
-            color:black;}
+.home-page .site-header ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
 
+.home-page .site-header li {
+    margin: 0;
+}
 
-        /* Footer */
-        footer {
-            text-align: center;
-            background-color: burlywood;
-            color: black;
-            padding: 20px;
-            margin-top: 40px;
-            border-radius: 10px;
-        }
+.home-page .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--brown-dark);
+    font-size: 20px;
+    font-weight: 800;
+    white-space: nowrap;
+}
 
-        /* Mobile */
-        @media (max-width: 700px) {
-        
+.home-page .shield {
+    width: 27px;
+    height: 31px;
+    background: var(--brown);
+    clip-path: polygon(50% 0, 92% 16%, 84% 72%, 50% 100%, 16% 72%, 8% 16%);
+}
 
-            .contact-box {
-                grid-template-columns: 1fr;
-                padding: 25px;
-            }
-        } /* End of Contact section */
+.home-page .hero {
+    min-height: 390px;
+    padding: 90px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    background:
+        linear-gradient(90deg, rgba(67, 38, 24, 0.82), rgba(106, 62, 43, 0.55)),
+        url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600") center 58% / cover;
+}
 
-        /* Report page */
-        .report-page {
-            margin: 0;
-            padding: 0;
-            background: #f7f8fa;
-            color: #252b36;
-            font-family: "Poppins", sans-serif;
-        }
+.home-page .hero h1 {
+    margin: 0;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
 
-        .report-page *,
-        .report-page *::before,
-        .report-page *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+.home-page .hero .tagline {
+    margin: 18px 0 0;
+    font-size: clamp(18px, 2.2vw, 24px);
+}
 
-        .report-page .site-header {
-            background: #fff;
-            border-bottom: 1px solid #e5e7eb;
-        }
+.home-page .container {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 54px 0 64px;
+}
 
-        .report-page .site-header nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px 24px;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 16px 20px;
-        }
+.home-page .container section {
+    margin-bottom: 48px;
+}
 
-        .report-page .site-header a {
-            color: #59321f;
-            font-weight: 600;
-            text-decoration: none;
-        }
+.home-page .container h1,
+.home-page .container h2,
+.home-page .card h3 {
+    color: var(--brown-dark);
+}
 
-        .report-page .site-header a:hover,
-        .report-page .site-header a[aria-current="page"] {
-            color: brown;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
+.home-page .about-section {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 
-        .report-page .wrap {
-            width: min(1100px, calc(100% - 32px));
-            margin: 0 auto;
-            padding: 36px 0 48px;
-        }
+.home-page .about-section p {
+    color: var(--muted);
+    font-size: 18px;
+}
 
-        .report-page .intro {
-            margin-bottom: 28px;
-            text-align: center;
-        }
+.home-page .vision-section .card {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--brown-dark);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+}
 
-        .report-page .intro h1 {
-            margin-bottom: 8px;
-            color: brown;
-            font-size: clamp(28px, 4vw, 36px);
-        }
+.home-page .vision-section .card-body {
+    padding: 38px;
+    text-align: center;
+}
 
-        .report-page .intro p {
-            max-width: 680px;
-            margin: 0 auto;
-            color: #586174;
-        }
+.home-page .vision-section h1,
+.home-page .vision-section p {
+    color: var(--white);
+}
 
-        .report-page .layout {
-            display: grid;
-            grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.9fr);
-            align-items: start;
-            gap: 24px;
-        }
+.home-page .grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
 
-        .report-page .card {
-            min-width: 0;
-            padding: 28px;
-            background:burlywood;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            box-shadow: 5px 20px 20px rgba(30, 41, 59, 0.06);
-        }
+.home-page .card {
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
 
-        .report-page .card h2 {
-            margin-bottom: 8px;
-            color: #59321f;
-            font-size: 22px;
-        }
+.home-page .card-body {
+    padding: 22px;
+}
 
-        .report-page .hint {
-            margin-bottom: 20px;
-            color: #586174;
-            font-size: 14px;
-        }
+.home-page .card h3 {
+    margin: 0 0 8px;
+}
 
-        .report-page fieldset {
-            min-width: 0;
-            margin-bottom: 22px;
-            padding: 18px;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-        }
+.home-page .card p {
+    margin: 0;
+    color: var(--muted);
+}
 
-        .report-page legend {
-            padding: 0 8px;
-            color: #59321f;
-            font-weight: 700;
-        }
+.home-page .services-section .card {
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
 
-        .report-page .field {
-            margin-bottom: 16px;
-        }
+.home-page .services-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(79, 55, 40, 0.12);
+}
 
-        .report-page .field:last-child {
-            margin-bottom: 0;
-        }
+.home-page .featured-section .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 
-        .report-page .row {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
-        }
+.home-page .featured-section .card {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+}
 
-        .report-page .field label {
-            display: block;
-            margin-bottom: 6px;
-            color: #303746;
-            font-weight: 600;
-        }
+.home-page .featured-section .card img {
+    width: calc(100% - 24px);
+    height: 220px;
+    margin: 12px 12px 0;
+    object-fit: cover;
+    border-radius: 9px;
+    transition: filter 180ms ease, transform 180ms ease;
+}
 
-        .report-page input,
-        .report-page select,
-        .report-page textarea {
-            width: 100%;
-            margin: 0;
-            padding: 11px 12px;
-            border: 1px solid #cbd1da;
-            border-radius: 7px;
-            background: #fff;
-            color: #252b36;
-            font: inherit;
-        }
+.home-page .featured-section .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 26px;
+}
 
-        .report-page input:focus,
-        .report-page select:focus,
-        .report-page textarea:focus {
-            border-color: brown;
-            outline: 3px solid rgba(165, 42, 42, 0.14);
-        }
+.home-page .featured-section .card p {
+    min-height: 54px;
+}
 
-        .report-page textarea {
-            min-height: 130px;
-            resize: vertical;
-        }
+.home-page .featured-section .card:hover img {
+    filter: brightness(0.92);
+    transform: scale(1.01);
+}
 
-        .report-page input[type="file"] {
-            padding: 8px;
-        }
+.home-page .btn {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 10px 16px;
+    color: var(--white);
+    background: var(--brown);
+    border-radius: 7px;
+    font-weight: 700;
+    text-decoration: none;
+}
 
-        .report-page .req,
-        .report-page .error,
-        .report-page .hint span {
-            color: #b42318;
-        }
+.home-page .featured-section .btn {
+    margin-top: 18px;
+}
 
-        .report-page .opt,
-        .report-page .count {
-            color: #687386;
-            font-size: 13px;
-        }
+.home-page .btn:hover {
+    background: #743422;
+    color: var(--white);
+}
 
-        .report-page .count {
-            margin-top: 4px;
-            text-align: right;
-        }
+.home-page .why-section {
+    padding: 34px 38px;
+    background: #efe2d1;
+    border-radius: 14px;
+}
 
-        .report-page .error {
-            margin-top: 5px;
-            font-size: 13px;
-        }
+.home-page .why-section ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 30px;
+}
 
-        .report-page .consent {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
+.home-page footer {
+    padding: 38px 5%;
+    background: var(--brown-dark);
+    color: var(--white);
+}
 
-        .report-page .consent input,
-        .report-page .checklist input {
-            flex: 0 0 auto;
-            width: auto;
-            margin-top: 4px;
-            accent-color: brown;
-        }
+.home-page footer ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+    list-style: none;
+}
 
-        .report-page .consent label {
-            margin: 0;
-            font-weight: 400;
-        }
+.home-page footer .copyright {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    color: #eadbd0;
+}
 
-        .report-page button {
-            width: auto;
-            margin: 0;
-            padding: 11px 20px;
-            border-radius: 7px;
-            background: brown;
-            box-shadow: none;
-            font: inherit;
-            font-weight: 600;
-        }
+/* HOSTELS PAGE */
+.hostel-page .wrap {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 52px 0 64px;
+}
 
-        .report-page button:hover {
-            background: #6f2c20;
-            color: #fff;
-        }
+.hostel-page .intro {
+    max-width: 760px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
 
-        .report-page .success {
-            margin-top: 12px;
-            color: #16794b;
-        }
+.hostel-page .intro h1 {
+    margin: 0 0 10px;
+    color: var(--brown);
+    font-size: clamp(28px, 4vw, 36px);
+}
 
-        .report-page .checklist {
-            display: grid;
-            gap: 13px;
-            list-style: none;
-        }
+.hostel-page .intro p {
+    color: var(--muted);
+}
 
-        .report-page .checklist label {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            color: #303746;
-            font-weight: 400;
-        }
+.hostel-page .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
 
-        .report-page .progress {
-            margin-top: 18px;
-            color: #586174;
-            font-size: 14px;
-            font-weight: 600;
-        }
+.hostel-page .card {
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
 
-        .report-page .safety {
-            margin-top: 20px;
-            padding: 14px;
-            border-left: 4px solid #d89b2b;
-            border-radius: 4px;
-            background: #fff8e8;
-            color: #593f12;
-            font-size: 14px;
-        }
+.hostel-page .card h3,
+.hostel-page h2 {
+    color: var(--brown-dark);
+}
 
-        .report-page footer {
-            margin: 0;
-            padding: 20px;
-            background: brown;
-            color: #fff;
-        }
+.hostel-page dl {
+    margin: 0;
+}
 
-        @media (max-width: 760px) {
-            .report-page .layout {
-                grid-template-columns: 1fr;
-            }
+.hostel-page dt {
+    margin-bottom: 7px;
+}
 
-            .report-page .card {
-                padding: 22px;
-            }
-        }
+.hostel-page .badge {
+    margin-left: 8px;
+    padding: 3px 8px;
+    color: var(--white);
+    background: var(--brown);
+    border-radius: 999px;
+    font-size: 12px;
+}
 
-        @media (max-width: 520px) {
-            .report-page .wrap {
-                width: min(100% - 24px, 1100px);
-                padding-top: 28px;
-            }
+.hostel-page .card a {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 15px;
+    color: var(--white);
+    background: var(--brown);
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 700;
+}
 
-            .report-page .row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
+.hostel-page table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border: 1px solid var(--border);
+}
 
-            .report-page fieldset {
-                padding: 14px;
-            }
-        } /*End of Report page */
+.hostel-page th,
+.hostel-page td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid var(--border);
+}
 
-        /*Hostel page */
-        .hostel-page {
-         margin: 0;
-         padding: 0;
-         background: whitesmoke;
-         color: gray;
-         font-family:"Poppins", sans-serif;
-        }
-       .hostel-page header h1{
-        text-align:center;
-        color:brown;
-        font-size:40px;
-       }
-       .hostel-page .site-header nav {
+.hostel-page th {
+    color: var(--white);
+    background: var(--brown-dark);
+}
+
+/* RENTALS PAGE  */
+.rentals-page .wrap,
+.verification-page .wrap {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 52px 0 64px;
+}
+
+.rentals-page .intro,
+.verification-page .intro {
+    max-width: 760px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.rentals-page .intro h1,
+.verification-page .intro h1 {
+    margin: 0 0 10px;
+    color: var(--brown);
+}
+
+.rentals-page .intro p,
+.verification-page .intro p {
+    color: var(--muted);
+}
+
+.rentals-page .grid,
+.verification-page .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.rentals-page .card,
+.verification-page .card {
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.rentals-page .card h2,
+.rentals-page .card h3,
+.verification-page .card h2,
+.verification-page .card h3 {
+    margin: 0 0 10px;
+    color: var(--brown-dark);
+}
+
+.rentals-page .card p,
+.verification-page .card p,
+.verification-page .card li {
+    color: var(--muted);
+}
+
+.rentals-page .listing-section {
+    grid-column: 1 / -1;
+    margin-top: 48px;
+}
+
+.rentals-page .listing-section h2 {
+    margin: 0 0 18px;
+    color: var(--brown-dark);
+}
+
+.rentals-page .listing-section .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rentals-page .listing-section .card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+}
+
+.rentals-page .listing-section .card img {
+    width: calc(100% - 24px);
+    height: 220px;
+    margin: 12px 12px 0;
+    object-fit: cover;
+    border-radius: 9px;
+    transition: filter 180ms ease, transform 180ms ease;
+}
+
+.rentals-page .listing-section .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 22px 24px 24px;
+}
+
+.rentals-page .listing-section .card-body p {
+    margin: 0 0 5px;
+}
+
+.rentals-page .listing-section .card:hover img {
+    filter: brightness(0.92);
+    transform: scale(1.01);
+}
+
+.rentals-page .listing-section .btn {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 10px 16px;
+    color: var(--white);
+    background: var(--brown);
+    border-radius: 7px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.rentals-page footer,
+.verification-page footer {
+    padding: 28px 20px;
+    background: var(--brown-dark);
+    color: var(--white);
+}
+
+/* VERIFICATION PAGE */
+.verification-page .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.verification-page .card ul {
+    margin: 10px 0 0;
+    padding-left: 20px;
+}
+
+/* REPORT PAGE */
+.report-page .wrap {
+    width: min(1100px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 36px 0 48px;
+}
+
+.report-page .intro {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.report-page .intro h1 {
+    margin: 0 0 8px;
+    color: var(--brown);
+    font-size: clamp(28px, 4vw, 36px);
+}
+
+.report-page .intro p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--muted);
+}
+
+.report-page .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.9fr);
+    align-items: start;
+    gap: 24px;
+}
+
+.report-page .card {
+    min-width: 0;
+    padding: 28px;
+    background: #deb887;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.report-page .card h2 {
+    margin: 0 0 8px;
+    color: var(--brown-dark);
+}
+
+.report-page .hint {
+    margin: 0 0 20px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.report-page fieldset {
+    margin: 0 0 22px;
+    padding: 18px;
+    border: 1px solid #d8cbbd;
+    border-radius: 8px;
+}
+
+.report-page legend {
+    padding: 0 8px;
+    color: var(--brown-dark);
+    font-weight: 700;
+}
+
+.report-page .field {
+    margin-bottom: 16px;
+}
+
+.report-page .row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.report-page label {
+    display: block;
+    margin-bottom: 6px;
+    color: #303746;
+    font-weight: 600;
+}
+
+.report-page input,
+.report-page select,
+.report-page textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd1da;
+    border-radius: 7px;
+    background: var(--white);
+    color: #252b36;
+    font: inherit;
+}
+
+.report-page input:focus,
+.report-page select:focus,
+.report-page textarea:focus {
+    border-color: var(--brown);
+    outline: 3px solid rgba(165, 42, 42, 0.14);
+}
+
+.report-page textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.report-page .req,
+.report-page .error,
+.report-page .hint span {
+    color: #b42318;
+}
+
+.report-page .opt,
+.report-page .count {
+    color: #687386;
+    font-size: 13px;
+}
+
+.report-page .count {
+    margin-top: 4px;
+    text-align: right;
+}
+
+.report-page .error {
+    display: none;
+    margin: 5px 0 0;
+    font-size: 13px;
+}
+
+.report-page .consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.report-page .consent input,
+.report-page .checklist input {
+    width: auto;
+    margin-top: 4px;
+    accent-color: var(--brown);
+}
+
+.report-page .consent label {
+    margin: 0;
+    font-weight: 400;
+}
+
+.report-page button {
+    width: auto;
+    padding: 11px 20px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--brown);
+    color: var(--white);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.report-page .checklist {
+    display: grid;
+    gap: 13px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.report-page .checklist label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #303746;
+    font-weight: 400;
+}
+
+.report-page .progress {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.report-page .safety {
+    margin-top: 20px;
+    padding: 14px;
+    border-left: 4px solid #d89b2b;
+    background: #fff8e8;
+    color: #593f12;
+    font-size: 14px;
+}
+
+.report-page footer {
+    padding: 20px;
+    background: var(--brown);
+    color: var(--white);
+}
+
+/* CONTACT PAGE */
+.contact-page .wrap {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 52px 0 64px;
+}
+
+.contact-page .contact-container,
+.contact-page .viewing-container,
+.contact-page .list-property-container {
+    margin-bottom: 48px;
+}
+
+.contact-page h1 {
+    margin: 0 0 8px;
+    color: var(--brown);
+    text-align: center;
+}
+
+.contact-page .intro {
+    margin: 0 auto 28px;
+    color: var(--muted);
+    text-align: center;
+}
+
+.contact-page .contact-box,
+.contact-page .viewing-box,
+.contact-page .list-property-box {
+    padding: 32px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.contact-page .contact-box {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+}
+
+.contact-page .contact-info h2,
+.contact-page .contact-box h2 {
+    color: var(--brown-dark);
+}
+
+.contact-page .info-item {
+    margin: 16px 0;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee4da;
+}
+
+.contact-page form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-page label {
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.contact-page input,
+.contact-page textarea {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 12px;
+    border: 1px solid #d8cbbd;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.contact-page textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.contact-page input:focus,
+.contact-page textarea:focus {
+    border-color: var(--brown);
+    outline: 3px solid rgba(165, 42, 42, 0.12);
+}
+
+.contact-page button {
+    align-self: flex-start;
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--brown);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.contact-page footer {
+    margin: 48px 0 0;
+    padding: 28px 20px;
+    background: var(--brown-dark);
+    color: var(--white);
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 980px) {
+    .home-page .grid,
+    .hostel-page .grid,
+    .verification-page .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .rentals-page .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .rentals-page .grid[aria-label] {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .report-page .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 20px;
+    }
+
+    .home-page .site-header nav,
+    .home-page .site-header ul {
+        width: 100%;
+    }
+}
+
+@media (max-width: 620px) {
+    .site-header {
+        min-height: auto;
+        padding: 12px;
+    }
+
+    .site-header nav {
+        min-height: auto;
+    }
+
+    .site-header a {
+        padding: 7px 8px;
+        font-size: 12px;
+    }
+
+    .home-page .site-header {
+        align-items: center;
+    }
+
+    .hero {
+        min-height: 320px;
+    }
+
+    .home-page .container,
+    .hostel-page .wrap,
+    .rentals-page .wrap,
+    .verification-page .wrap,
+    .contact-page .wrap {
+        width: min(100% - 28px, 1120px);
+        padding-top: 38px;
+    }
+
+    .home-page .grid,
+    .home-page .featured-section .grid,
+    .home-page .why-section ul,
+    .hostel-page .grid,
+    .rentals-page .grid,
+    .rentals-page .grid[aria-label],
+    .rentals-page .listing-section .grid,
+    .verification-page .grid,
+    .contact-page .contact-box {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page .featured-section .card img,
+    .rentals-page .listing-section .card img {
+        height: 210px;
+    }
+
+    .home-page .why-section {
+        padding: 28px 24px;
+    }
+
+    .home-page footer ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .report-page .wrap {
+        width: min(100% - 24px, 1100px);
+    }
+
+    .report-page .row {
+        grid-template-columns: 1fr;
+    }
+
+    .report-page fieldset,
+    .report-page .card {
+        padding: 14px;
+    }
+
+    .contact-page .contact-box,
+    .contact-page .viewing-box,
+    .contact-page .list-property-box {
+        padding: 22px;
+    }
+
+    .hostel-page table {
         display: block;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px 24px;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 16px 20px;
-       }
-       .hostel-page .site-header{
-        background-color:white;
-        border-bottom: 1px solid #e5e7eb;
-         }
-        .hostel-page .site-header a {
-        color: black;
-        font-weight: 600;
-        text-decoration: none;
-        }
-        .hostel-page .site-header a:hover,
-        .hostel-page .site-header a[aria-current="page"] {
-            color: brown;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }   
-        .hostel-page .wrap {
-            width: min(1100px, calc(100% - 32px));
-            margin: 0 auto;
-            padding: 36px 0 48px;
-        }
-        .hostel-page .intro {
-            margin-bottom: 28px;
-            text-align: center;
-        }
-        .hostel-page p{
-            color:black;
-        }
-        .hostel-page .intro h1 {
-            margin-bottom: 8px;
-            color: brown;
-            font-size: clamp(28px, 4vw, 36px);
-        }
-        .hostel-page h2{
-            color:black;
-        }
-        .hostel-page section{
-            margin-bottom:20px;
-            color:black;
-        }
-        .hostel-page .card{
-            border:3px solid #e5e7eb;
-            border-radius: 12px;
-            box-shadow: 5px 20px 20px rgba(30, 41, 59, 0.15);
-            background-color:burlywood;
-            height:fit-content;
-        }
-        .hostel-page .card h3{
-            color:brown;
-        }
-        .hostel-page a, .hostel-page span{
-            color:brown;
-            text-decoration:none;
-        }
-        /* index */
-        .home-page,
-        .home-page * {
-            box-sizing: border-box;
-        }
-
-        .home-page {
-            margin: 0;
-            padding: 0;
-            background: #f8f5f0;
-            color: #2f2723;
-        }
-
-        .home-page .site-header {
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 0 5%;
-            min-height: 78px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            background: #fff;
-            border-bottom: 1px solid #eadfd3;
-        }
-
-        .home-page .site-header .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 0;
-            padding: 0;
-            color: #59321f;
-            font-size: 20px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-        }
-
-        .home-page .shield {
-            width: 27px;
-            height: 31px;
-            display: inline-block;
-            background: brown;
-            clip-path: polygon(50% 0, 92% 16%, 84% 72%, 50% 100%, 16% 72%, 8% 16%);
-        }
-
-        .home-page .site-header nav {
-            margin: 0;
-            padding: 0;
-            background: transparent;
-        }
-
-        .home-page .site-header ul {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .home-page .site-header li {
-            margin: 0;
-            padding: 0;
-        }
-
-        .home-page .site-header a {
-            display: block;
-            margin: 0;
-            padding: 9px 10px;
-            color: #5f5048;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 7px;
-        }
-
-        .home-page .site-header a:hover,
-        .home-page .site-header a.active {
-            background: #f4eadf;
-            color: brown;
-            text-decoration: none;
-        }
-
-        .home-page .hero {
-            min-height: 390px;
-            margin: 0;
-            padding: 90px 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            background:
-                linear-gradient(90deg, rgba(67, 38, 24, 0.82), rgba(106, 62, 43, 0.55)),
-                url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600") center 58% / cover;
-        }
-
-        .home-page .hero h1 {
-            margin: 0;
-            padding: 0;
-            font-size: clamp(42px, 7vw, 76px);
-            line-height: 1.05;
-            letter-spacing: -2px;
-            text-shadow: 0 3px 18px rgba(0, 0, 0, 0.25);
-        }
-
-        .home-page .hero .tagline {
-            margin: 18px 0 0;
-            padding: 0;
-            font-size: clamp(18px, 2.2vw, 24px);
-            font-weight: 500;
-        }
-
-        .home-page .container {
-            width: min(1120px, calc(100% - 40px));
-            margin: 0 auto;
-            padding: 54px 0 64px;
-        }
-
-        .home-page .container section {
-            margin: 0 0 48px;
-            padding: 0;
-        }
-
-        .home-page .container h1,
-        .home-page .container h2 {
-            margin: 0 0 14px;
-            padding: 0;
-            color: #59321f;
-        }
-
-        .home-page .container h2 {
-            font-size: 30px;
-        }
-
-        .home-page .container p {
-            margin: 0;
-            padding: 0;
-        }
-
-        .home-page .about-section {
-            max-width: 780px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
-
-        .home-page .about-section p {
-            color: #67584f;
-            font-size: 18px;
-        }
-
-        .home-page .vision-section .card {
-            max-width: 780px;
-            margin: 0 auto;
-            background: #59321f;
-            border: 0;
-            border-radius: 14px;
-            box-shadow: 0 14px 35px rgba(89, 50, 31, 0.14);
-        }
-
-        .home-page .vision-section .card-body {
-            padding: 38px;
-            text-align: center;
-        }
-
-        .home-page .vision-section h1 {
-            color: #fff;
-        }
-
-        .home-page .vision-section p {
-            color: #f7ede5;
-            font-size: 17px;
-        }
-
-        .home-page .grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 18px;
-        }
-
-        .home-page .card {
-            min-width: 0;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background: #fff;
-            border: 1px solid #eadfd3;
-            border-radius: 12px;
-            box-shadow: 0 10px 28px rgba(79, 55, 40, 0.08);
-        }
-
-        .home-page .card-body {
-            margin: 0;
-            padding: 22px;
-        }
-
-        .home-page .card h3 {
-            margin: 0 0 8px;
-            padding: 0;
-            color: #59321f;
-        }
-
-        .home-page .card p {
-            color: #6a5e55;
-            line-height: 1.65;
-        }
-
-        .home-page .services-section .card {
-            transition: transform 180ms ease, box-shadow 180ms ease;
-        }
-
-        .home-page .services-section .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 32px rgba(79, 55, 40, 0.12);
-        }
-
-        .home-page .featured-section .grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .home-page .featured-section .card img {
-            width: 100%;
-            height: 240px;
-            display: block;
-            margin: 0;
-            padding: 0;
-            object-fit: cover;
-        }
-
-        .home-page .featured-section .card-body {
-            padding: 26px;
-        }
-
-        .home-page .featured-section .card p {
-            min-height: 54px;
-        }
-
-        .home-page .btn {
-            display: inline-block;
-            margin: 18px 0 0;
-            padding: 10px 16px;
-            color: #fff;
-            background: brown;
-            border-radius: 7px;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .home-page .btn:hover {
-            background: #743422;
-            color: #fff;
-        }
-
-        .home-page .why-section {
-            padding: 34px 38px !important;
-            background: #efe2d1;
-            border-radius: 14px;
-        }
-
-        .home-page .why-section ul {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px 30px;
-            margin: 0;
-            padding: 0 0 0 20px;
-        }
-
-        .home-page .why-section li {
-            margin: 0;
-            padding: 4px 0;
-        }
-
-        .home-page footer {
-            margin: 0;
-            padding: 38px 5%;
-            background: #59321f;
-            color: #fff;
-            border-radius: 0;
-        }
-
-        .home-page footer h4 {
-            margin: 0 0 10px;
-            padding: 0;
-            font-size: 18px;
-        }
-
-        .home-page footer ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px 28px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .home-page footer li,
-        .home-page footer .copyright {
-            margin: 0;
-            padding: 0;
-        }
-
-        .home-page footer .copyright {
-            margin-top: 24px;
-            padding-top: 18px;
-            border-top: 1px solid rgba(255, 255, 255, 0.18);
-            color: #eadbd0;
-            font-size: 14px;
-        }
-
-        @media (max-width: 980px) {
-            .home-page .site-header {
-                align-items: flex-start;
-                flex-direction: column;
-                padding: 16px 20px;
-            }
-
-            .home-page .site-header nav,
-            .home-page .site-header ul {
-                width: 100%;
-            }
-
-            .home-page .site-header ul {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .home-page .grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 620px) {
-            .home-page .site-header {
-                align-items: center;
-            }
-
-            .home-page .site-header ul {
-                gap: 2px;
-            }
-
-            .home-page .site-header a {
-                padding: 7px 8px;
-                font-size: 12px;
-            }
-
-            .home-page .hero {
-                min-height: 320px;
-                padding: 70px 18px;
-            }
-
-            .home-page .hero h1 {
-                letter-spacing: -1px;
-            }
-
-            .home-page .container {
-                width: min(100% - 28px, 1120px);
-                padding-top: 38px;
-            }
-
-            .home-page .grid,
-            .home-page .featured-section .grid,
-            .home-page .why-section ul {
-                grid-template-columns: 1fr;
-            }
-
-            .home-page .featured-section .card img {
-                height: 210px;
-            }
-
-            .home-page .why-section {
-                padding: 28px 24px !important;
-            }
-
-            .home-page footer ul {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        /* Shared page shell */
-        .hostel-page,
-        .report-page,
-        .contact-page,
-        .rentals-page,
-        .verification-page {
-            margin: 0;
-            padding: 0;
-            background: #f8f5f0;
-        }
-
-        .hostel-page *,
-        .report-page *,
-        .contact-page *,
-        .rentals-page *,
-        .verification-page * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        .hostel-page .site-header,
-        .report-page .site-header,
-        .contact-page .site-header,
-        .rentals-page .site-header,
-        .verification-page .site-header {
-            max-width: none;
-            margin: 0;
-            padding: 0 5%;
-            min-height: 78px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #fff;
-            border-bottom: 1px solid #eadfd3;
-        }
-
-        .hostel-page .site-header nav,
-        .report-page .site-header nav,
-        .contact-page .site-header nav,
-        .rentals-page .site-header nav,
-        .verification-page .site-header nav {
-            width: 100%;
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 14px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 4px 8px;
-            background: transparent;
-            border: 0;
-        }
-
-        .hostel-page .site-header a,
-        .report-page .site-header a,
-        .contact-page .site-header a,
-        .rentals-page .site-header a,
-        .verification-page .site-header a {
-            margin: 0;
-            padding: 9px 10px;
-            color: #5f5048;
-            border-radius: 7px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .hostel-page .site-header a:hover,
-        .hostel-page .site-header a[aria-current="page"],
-        .report-page .site-header a:hover,
-        .report-page .site-header a[aria-current="page"],
-        .contact-page .site-header a:hover,
-        .contact-page .site-header a[aria-current="page"],
-        .rentals-page .site-header a:hover,
-        .rentals-page .site-header a[aria-current="page"],
-        .verification-page .site-header a:hover,
-        .verification-page .site-header a[aria-current="page"] {
-            background: #f4eadf;
-            color: brown;
-            text-decoration: none;
-        }
-
-        /* Hostel listings */
-        .hostel-page header h1 {
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        .hostel-page .wrap {
-            width: min(1120px, calc(100% - 40px));
-            padding: 52px 0 64px;
-        }
-
-        .hostel-page .intro {
-            max-width: 760px;
-            margin: 0 auto 38px;
-        }
-
-        .hostel-page .intro p {
-            color: #67584f;
-            font-size: 17px;
-        }
-
-        .hostel-page .listings > h2,
-        .hostel-page .listings section h2 {
-            margin: 0 0 18px;
-        }
-
-        .hostel-page .grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px;
-        }
-
-        .hostel-page .card {
-            margin: 0;
-            padding: 24px;
-            background: #fff;
-            border: 1px solid #eadfd3;
-            box-shadow: 0 12px 30px rgba(79, 55, 40, 0.08);
-        }
-
-        .hostel-page .card h3 {
-            margin: 0 0 16px;
-        }
-
-        .hostel-page .badge {
-            display: inline-block;
-            margin-left: 8px;
-            padding: 3px 8px;
-            color: #fff;
-            background: brown;
-            border-radius: 999px;
-            font-size: 12px;
-        }
-
-        .hostel-page dl {
-            margin: 0;
-        }
-
-        .hostel-page dt {
-            margin-bottom: 7px;
-        }
-
-        .hostel-page .card > a {
-            display: inline-block;
-            margin: 8px 0 0;
-            padding: 10px 15px;
-            color: #fff;
-            background: brown;
-            border-radius: 7px;
-            font-weight: 700;
-        }
-
-        .hostel-page section section,
-        .hostel-page .listings > section {
-            grid-column: 1 / -1;
-            margin: 20px 0 0;
-        }
-
-        .hostel-page table {
-            width: 100%;
-            margin: 0;
-            border-collapse: collapse;
-            overflow: hidden;
-            background: #fff;
-            border: 1px solid #eadfd3;
-            border-radius: 10px;
-        }
-
-        .hostel-page th,
-        .hostel-page td {
-            padding: 12px;
-            text-align: left;
-            border: 1px solid #eadfd3;
-        }
-
-        .hostel-page th {
-            color: #fff;
-            background: #59321f;
-        }
-
-        .hostel-page ul {
-            padding-left: 22px;
-        }
-
-        /* Contact, viewing and listing forms */
-        .contact-page .wrap {
-            width: min(1120px, calc(100% - 40px));
-            margin: 0 auto;
-            padding: 52px 0 64px;
-        }
-
-        .contact-page .contact-container,
-        .contact-page .viewing-container,
-        .contact-page .list-property-container {
-            max-width: none;
-            margin: 0 0 48px;
-            padding: 0;
-        }
-
-        .contact-page .contact-container h1,
-        .contact-page .viewing-container h1,
-        .contact-page .list-property-container h1 {
-            margin: 0 0 8px;
-        }
-
-        .contact-page .intro {
-            margin: 0 auto 28px;
-            color: #67584f;
-            font-weight: 400;
-        }
-
-        .contact-page .contact-box,
-        .contact-page .viewing-box,
-        .contact-page .list-property-box {
-            margin: 0;
-            padding: 32px;
-            background: #fff;
-            border: 1px solid #eadfd3;
-            border-radius: 12px;
-            box-shadow: 0 12px 30px rgba(79, 55, 40, 0.08);
-        }
-
-        .contact-page .contact-box {
-            background: #fff;
-        }
-
-        .contact-page .contact-info h2,
-        .contact-page .contact-box h2,
-        .contact-page .viewing-container h1,
-        .contact-page .list-property-container h1 {
-            color: #59321f;
-        }
-
-        .contact-page .info-item {
-            margin: 16px 0;
-            padding: 12px 0;
-            border-bottom: 1px solid #eee4da;
-        }
-
-        .contact-page form {
-            width: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        .contact-page label {
-            margin: 0 0 6px;
-        }
-
-        .contact-page input,
-        .contact-page textarea {
-            margin: 0 0 16px;
-            padding: 12px;
-            border: 1px solid #d8cbbd;
-            background: #fff;
-            color: #302923;
-        }
-
-        .contact-page input:focus,
-        .contact-page textarea:focus {
-            border-color: brown;
-            outline: 3px solid rgba(165, 42, 42, 0.12);
-        }
-
-        .contact-page button {
-            width: auto;
-            margin: 4px 0 0;
-            padding: 11px 18px;
-            background: brown;
-            box-shadow: none;
-        }
-
-        .contact-page footer {
-            margin: 0 -20vw;
-            padding: 28px 20vw;
-            background: #59321f;
-            color: #fff;
-            border-radius: 0;
-        }
-
-        /* Rentals and verification pages */
-        .rentals-page .wrap,
-        .verification-page .wrap {
-            width: min(1120px, calc(100% - 40px));
-            margin: 0 auto;
-            padding: 52px 0 64px;
-        }
-
-        .rentals-page .intro,
-        .verification-page .intro {
-            max-width: 760px;
-            margin: 0 auto 38px;
-            text-align: center;
-        }
-
-        .rentals-page .intro h1,
-        .verification-page .intro h1 {
-            margin: 0 0 10px;
-            color: brown;
-        }
-
-        .rentals-page .intro p,
-        .verification-page .intro p {
-            color: #67584f;
-        }
-
-        .rentals-page .grid,
-        .verification-page .grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 20px;
-        }
-
-        .rentals-page .card,
-        .verification-page .card {
-            margin: 0;
-            padding: 24px;
-            background: #fff;
-            border: 1px solid #eadfd3;
-            border-radius: 12px;
-            box-shadow: 0 12px 30px rgba(79, 55, 40, 0.08);
-        }
-
-        .rentals-page .card h2,
-        .rentals-page .card h3,
-        .verification-page .card h2,
-        .verification-page .card h3 {
-            margin: 0 0 10px;
-            color: #59321f;
-        }
-
-        .rentals-page .card p,
-        .verification-page .card p,
-        .verification-page .card li {
-            color: #67584f;
-        }
-
-        .rentals-page footer,
-        .verification-page footer {
-            margin: 0;
-            padding: 28px 20px;
-            background: #59321f;
-            color: #fff;
-            border-radius: 0;
-        }
-
-        @media (max-width: 980px) {
-            .hostel-page .grid,
-            .rentals-page .grid,
-            .verification-page .grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .hostel-page table {
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-        }
-
-        @media (max-width: 620px) {
-            .hostel-page .site-header,
-            .report-page .site-header,
-            .contact-page .site-header,
-            .rentals-page .site-header,
-            .verification-page .site-header {
-                min-height: auto;
-                padding: 12px;
-            }
-
-            .hostel-page .site-header a,
-            .report-page .site-header a,
-            .contact-page .site-header a,
-            .rentals-page .site-header a,
-            .verification-page .site-header a {
-                padding: 7px 8px;
-                font-size: 12px;
-            }
-
-            .hostel-page .wrap,
-            .rentals-page .wrap,
-            .verification-page .wrap,
-            .contact-page .wrap {
-                width: min(100% - 28px, 1120px);
-                padding-top: 38px;
-            }
-
-            .hostel-page .grid,
-            .rentals-page .grid,
-            .verification-page .grid,
-            .contact-page .contact-box {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-page .contact-box,
-            .contact-page .viewing-box,
-            .contact-page .list-property-box {
-                padding: 22px;
-            }
-
-            .contact-page footer {
-                margin: 0 -14px;
-                padding: 24px 14px;
-            }
-        }
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
