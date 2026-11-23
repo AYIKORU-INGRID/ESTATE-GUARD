@@ -402,10 +402,43 @@ footer {
     border: 1px solid var(--border);
 }
 
+.hostel-page .listings,
+.hostel-page .comparison-section,
+.hostel-page .rules-section {
+    margin-top: 32px;
+}
+
+.hostel-page .listings h2,
+.hostel-page .comparison-section h2,
+.hostel-page .rules-section h2 {
+    margin: 0 0 18px;
+}
+
+.hostel-page .table-wrap {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.hostel-page .rules-section ul {
+    margin: 12px 0 0;
+    padding-left: 20px;
+}
+
+.hostel-page .rules-section li {
+    margin-bottom: 10px;
+}
+
+.hostel-page footer {
+    padding: 28px 20px;
+    background: var(--brown-dark);
+    color: var(--white);
+}
+
 .hostel-page th,
 .hostel-page td {
     padding: 12px;
-    text-align: left;
+    text-align: center;
     border: 1px solid var(--border);
 }
 
@@ -538,13 +571,117 @@ footer {
 /* VERIFICATION PAGE */
 .verification-page .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: grid;
+    gap: 20px;
+    width:fit-content;
+    margin:20px;
+    margin-bottom: 5px;
+}
+.verification-page section{
+    margin-bottom: 36px;
+    unicode-bidi: isolate;
 }
 
 .verification-page .card ul {
     margin: 10px 0 0;
     padding-left: 20px;
 }
+        .verification-page .wrap {
+            width: 100%;
+            margin: 0 auto;
+            padding:52px 0 64px;
+        }
+        .verification-page .intro {
+            max-width: 760px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
 
+        .verification-page .intro h1 {
+            margin: 0 0 10px;
+            color: brown;
+        }
+
+        .verification-page .intro p {
+            color: #67584f;
+        }
+
+        .verification-page .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+        .verification-page .card {
+            margin: 0;
+            padding: 24px;
+            background: #fff;
+            border: 1px solid #eadfd3;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(79, 55, 40, 0.08);
+        }
+    .verification-page .faqs{
+        margin:20px;
+    }
+        .verification-page .card h2,
+        .verification-page .card h3 {
+            margin: 0 0 10px;
+            color: #59321f;
+        }
+
+        .verification-page .card p,
+        .verification-page .card li {
+            color: #67584f;
+        }
+
+        .verification-page footer {
+            margin: 0;
+            padding: 28px 20px;
+            background: #59321f;
+            color: #fff;
+            border-radius: 0;
+        }
+        .verification-page .note{
+                margin: 20px;
+    padding: 12px 10px;
+    background: #efe2d1;
+    border-left: 4px solid brown;
+    border-radius: 6px;
+    color:#302923;
+    width:fit-content;
+
+}
+.verification-page p{
+    color:#302923
+}
+.verification-page .warning-signs{
+    padding:10px;
+    width: 80%;
+    margin:20px;
+    margin-bottom: 20px;
+
+}
+
+.signs{
+    margin-bottom: 10px;
+}
+.verification-page details{
+    margin-bottom: 10px;
+    padding: 12px 16px;
+    background: #fff;
+    border: 1px solid #eadfd3;
+    border-radius: 8px;
+    
+}
+details {
+    display: block;
+    width:90%;
+    margin: 20px;
+}
+.verification-page h2{
+   padding: 12px 16px; 
+   margin: 0 0 14px;
+    color: #59321f;
+}
 /* REPORT PAGE */
 .report-page .wrap {
     width: min(1100px, calc(100% - 32px));
@@ -950,9 +1087,4 @@ footer {
         padding: 22px;
     }
 
-    .hostel-page table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
 }
